@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:ks_fabrics/constants.dart';
 import 'package:ks_fabrics/screens/sign_in/sign_in_screen.dart';
 import 'package:ks_fabrics/screens/splash/components/splash_content.dart';
+import 'package:ks_fabrics/screens/splash/home/home_screen.dart';
 import 'package:ks_fabrics/size_config.dart';
 import '../../../components/default_button.dart';
 
