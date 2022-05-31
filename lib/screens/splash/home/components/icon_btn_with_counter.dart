@@ -22,7 +22,7 @@ class IconBtnWithCouter extends StatelessWidget {
       onTap: press,
       borderRadius: BorderRadius.circular(50),
       child: Stack(
-        overflow: Overflow.visible,
+        // overflow: Overflow.visible,
         children: [
           Container(
             padding: EdgeInsets.all(getProportionateScreenWidth(12)),
