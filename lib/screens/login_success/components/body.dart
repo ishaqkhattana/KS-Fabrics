@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ks_fabrics/components/default_button.dart';
-// import 'package:ks_fabrics/screens/home/home_screen.dart';
 import 'package:ks_fabrics/size_config.dart';
 
 import '../../splash/home/home_screen.dart';
