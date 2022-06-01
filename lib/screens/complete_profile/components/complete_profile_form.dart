@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ks_fabrics/components/custom_suffix_icon.dart';
 import 'package:ks_fabrics/components/default_button.dart';
 import 'package:ks_fabrics/components/form_error.dart';
-import 'package:shop_app/screens/home/home_screen.dart';
+import 'package:ks_fabrics/screens/splash/home/home_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
