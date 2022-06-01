@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ks_fabrics/components/default_button.dart';
-// import 'package:ks_fabrics/screens/home/home_screen.dart';
 import 'package:ks_fabrics/size_config.dart';
+
+import '../../splash/home/home_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -28,7 +29,7 @@ class Body extends StatelessWidget {
           child: DefaultButton(
             text: "Back to home",
             press: () {
-              // Navigator.pushNamed(context, HomeScreen.routeName);
+              Navigator.pushNamed(context, HomeScreen.routeName);
             },
           ),
         ),
