@@ -4,7 +4,7 @@ import '../../../constants.dart';
 import '../../../models/Product.dart';
 import '../../../size_config.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatelessWidget{
   const ProductCard({
     Key? key,
     this.width = 140,

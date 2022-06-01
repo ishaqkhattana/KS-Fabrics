@@ -5,6 +5,10 @@ import 'package:ks_fabrics/helper/keyboard.dart';
 import 'package:ks_fabrics/screens/forgot_password/forgot_password_screen.dart';
 import 'package:ks_fabrics/screens/login_success/login_success_screen.dart';
 
+
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_core/amplify_core.dart';
+
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -75,7 +79,12 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                // if all are valid then go to success screen
+              
+   SignInResult res = await Amplify.Auth.signIn(
+     username: usernameController.text.trim(),
+     password: passwordController.text.trim(),
+   );
+ 
                 KeyboardUtil.hideKeyboard(context);
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }

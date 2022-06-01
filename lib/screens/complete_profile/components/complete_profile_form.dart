@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ks_fabrics/components/custom_suffix_icon.dart';
 import 'package:ks_fabrics/components/default_button.dart';
 import 'package:ks_fabrics/components/form_error.dart';
-// import 'package:shop_app/screens/otp/otp_screen.dart';
+import 'package:shop_app/screens/home/home_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -53,7 +53,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             text: "continue",
             press: () {
               if (_formKey.currentState!.validate()) {
-                // Navigator.pushNamed(context, OtpScreen.routeName);
+                Navigator.pushNamed(context, HomeScreen.routeName);
               }
             },
           ),

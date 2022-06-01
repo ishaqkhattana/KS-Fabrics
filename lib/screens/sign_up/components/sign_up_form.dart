@@ -3,6 +3,10 @@ import 'package:ks_fabrics/components/custom_suffix_icon.dart';
 import 'package:ks_fabrics/components/default_button.dart';
 import 'package:ks_fabrics/components/form_error.dart';
 import 'package:ks_fabrics/screens/complete_profile/complete_profile_screen.dart';
+import 'package:flutter/foundation.dart';
+
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_core/amplify_core.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -34,6 +38,30 @@ class _SignUpFormState extends State<SignUpForm> {
       });
   }
 
+  Future<void> handleSubmit(BuildContext context) async {
+
+
+    /// In this user attribute, you can define the custom fields associated with the user.
+    /// For example birthday, telephone number, etc
+    
+
+      try {
+        final result = await Amplify.Auth.signUp(
+          username: email,
+          password: password,
+        );
+        if (result.isSignUpComplete) {
+          debugPrint('movieTitle: $result');
+
+          // _gotToEmailConfirmationScreen(context, email);
+        }
+      } on AuthError catch (e) {
+          debugPrint(e);
+        
+      }
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -53,6 +81,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
+                await handleSubmit()
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },

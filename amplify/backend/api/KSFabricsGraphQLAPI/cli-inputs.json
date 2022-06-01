@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "KSFabricsGraphQLAPI",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/ishaq/Documents/KS-Fabrics/amplify/backend/api/KSFabricsGraphQLAPI/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-05-29T20:00:37.554Z",
+      "keyDescription": "root"
+    }
+  }
+}
