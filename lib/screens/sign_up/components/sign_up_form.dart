@@ -38,32 +38,29 @@ class _SignUpFormState extends State<SignUpForm> {
       });
   }
 
-  // Future<void> handleSubmit(BuildContext context) async {
+  Future<void> handleSubmit(BuildContext context) async {
 
 
-  //   /// In this user attribute, you can define the custom fields associated with the user.
-  //   /// For example birthday, telephone number, etc
-  //     Map<String, dynamic> userAttributes = {
-  //       "email": email,
-  //     };
-
-  //     try {
-  //       final result = await Amplify.Auth.signUp(
-  //         username: email,
-  //         password: password,
-  //         options: CognitoSignUpOptions(userAttributes: userAttributes),
-  //       );
-  //       if (result.isSignUpComplete) {
-          // debugPrint('movieTitle: $result');
-
-  //         // _gotToEmailConfirmationScreen(context, email);
-  //       }
-  //     } on AuthError catch (e) {
-  //         debugPrint(e);
-        
-  //     }
+    /// In this user attribute, you can define the custom fields associated with the user.
+    /// For example birthday, telephone number, etc
     
-  // }
+
+      try {
+        final result = await Amplify.Auth.signUp(
+          username: email,
+          password: password,
+        );
+        if (result.isSignUpComplete) {
+          debugPrint('movieTitle: $result');
+
+          // _gotToEmailConfirmationScreen(context, email);
+        }
+      } on AuthError catch (e) {
+          debugPrint(e);
+        
+      }
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +81,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
-
+                await handleSubmit()
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
